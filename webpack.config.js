@@ -9,26 +9,27 @@ module.exports = {
     //提取公共lib
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js'),
-        //new webpack.optimize.UglifyJsPlugin({
-        //    compress:{
-        //        drop_console:true,
-        //        warnings:false
-        //    }
-        //}),
+        new webpack.optimize.UglifyJsPlugin({
+            compress:{
+                drop_console:true,
+                warnings:false
+            }
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery'
+            'window.jQuery': 'jquery',
+            React:'react'
         })
 
     ],
     //页面入口
     entry: {
-        index: './src/js/main.js'
+        index: './src/js/index.js'
     },
     //输出配置
     output: {
-        path: './dist/js',
+        path: './build/js',
         filename: '[name].bundle.js'
     },
     module: {
