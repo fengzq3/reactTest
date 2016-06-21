@@ -9,23 +9,27 @@ module.exports = {
     //提取公共lib
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new webpack.optimize.UglifyJsPlugin({
-            compress:{
-                drop_console:true,
-                warnings:false
-            }
-        }),
+        //new webpack.optimize.UglifyJsPlugin({
+        //    compress:{
+        //        drop_console:true,
+        //        warnings:false
+        //    }
+        //}),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
-            React:'react'
+            React:'react',
+            ReactDOM:'react-dom'
         })
 
     ],
     //页面入口
     entry: {
-        index: './src/js/index.js'
+        index: './src/js/index.js',
+        demo2:'./src/js/demo2.js',
+        demo3:'./src/js/demo3.js',
+        demo4:'./src/js/demo4.js'
     },
     //输出配置
     output: {

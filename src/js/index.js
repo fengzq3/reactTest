@@ -4,7 +4,7 @@
 "use strict";
 
 //var React = require('react');
-var ReactDom = require('react-dom');
+// var ReactDom = require('react-dom');
 
 window.onload = function () {
     console.log('window.onload');
@@ -16,5 +16,5 @@ window.onload = function () {
         }
     });
 
-    ReactDom.render(<HelloMessage name="World" />, mountNode);
+    ReactDOM.render(<HelloMessage name="World" />, mountNode);
 };
