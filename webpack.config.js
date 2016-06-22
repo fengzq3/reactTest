@@ -16,20 +16,23 @@ module.exports = {
         //    }
         //}),
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            React:'react',
-            ReactDOM:'react-dom'
+            // $: 'jquery',
+            // jQuery: 'jquery',
+            // 'window.jQuery': 'jquery',
+            React: 'react',
+            ReactDOM: 'react-dom'
         })
 
     ],
     //页面入口
     entry: {
-        index: './src/js/index.js',
-        demo2:'./src/js/demo2.js',
-        demo3:'./src/js/demo3.js',
-        demo4:'./src/js/demo4.js'
+        index: './src/js/index.jsx',
+        demo2: './src/js/demo2.jsx',
+        demo3: './src/js/demo3.jsx',
+        demo4: './src/js/demo4.jsx',
+        demo5: './src/js/demo5.jsx',
+        demo6: './src/js/demo6.jsx',
+        demo7: './src/js/demo7.jsx'
     },
     //输出配置
     output: {
@@ -38,14 +41,20 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.js$/, loader: 'jsx-loader?harmony'},
-            {test: /\.css$/, loader: 'style-loader!css-loader'},
-            {test: /\.(jpg|png)$/, loader: 'url?limit=8192'}
+            {
+                test: /\.(js|jsx)$/,
+                loader: 'babel',
+                query:{
+                    presets:['react','es2015']
+                }
+            },
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            { test: /\.(jpg|png)$/, loader: 'url?limit=8192' }
         ]
     },
-    resolve:{
-        alias:{
-            jquery:'./jquery-1.11.3.min'
+    resolve: {
+        alias: {
+            jquery: './jquery-1.11.3.min'
         }
     }
 
