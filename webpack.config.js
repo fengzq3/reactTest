@@ -16,9 +16,9 @@ module.exports = {
         //    }
         //}),
         new webpack.ProvidePlugin({
-            // $: 'jquery',
-            // jQuery: 'jquery',
-            // 'window.jQuery': 'jquery',
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
             React: 'react',
             ReactDOM: 'react-dom'
         })
@@ -37,7 +37,8 @@ module.exports = {
         demo9: './src/js/demo9.jsx',
         demo10: './src/js/demo10.jsx',
         demo11: './src/js/demo11.jsx',
-        demo12: './src/js/demo12.jsx'
+        demo12: './src/js/demo12.jsx',
+        demo13: './src/js/demo13.jsx'
     },
     //输出配置
     output: {
@@ -49,8 +50,8 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel',
-                query:{
-                    presets:['react','es2015']
+                query: {
+                    presets: ['react', 'es2015']
                 }
             },
             { test: /\.css$/, loader: 'style-loader!css-loader' },
