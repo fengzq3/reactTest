@@ -38,7 +38,8 @@ module.exports = {
         demo10: './src/js/demo10.jsx',
         demo11: './src/js/demo11.jsx',
         demo12: './src/js/demo12.jsx',
-        demo13: './src/js/demo13.jsx'
+        demo13: './src/js/demo13.jsx',
+        demo14: './src/js/demo14.jsx'
     },
     //输出配置
     output: {
